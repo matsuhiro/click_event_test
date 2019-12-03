@@ -108,6 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     width: 300,
                     height: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ),
                     child: Column(
                       children: <Widget>[
                         RaisedButton(
