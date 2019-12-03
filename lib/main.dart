@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                print('container tapped');
+                print('outer container tapped');
               },
               child: Container(
                 width: 300,
@@ -101,32 +101,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(
                   color: Colors.yellow,
                 ),
-                child: Column(
-                  children: <Widget>[
-                    RaisedButton(
-                      onPressed: () {
-                        print('button 0 tappted');
-                      },
-                      child: Text('button0'),
+                child: GestureDetector(
+                  onTap: () {
+                    print('inner container tapped');
+                  },
+                  child: Container(
+                    width: 300,
+                    height: 300,
+                    child: Column(
+                      children: <Widget>[
+                        RaisedButton(
+                          onPressed: () {
+                            print('button 0 tappted');
+                          },
+                          child: Text('button0'),
+                        ),
+                        Spacer(),
+                        RaisedButton(
+                          onPressed: () {
+                            print('button 1 tappted');
+                          },
+                          child: Text('button1'),
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: RaisedButton(
+                            onPressed: () {
+                              print('button 2 tappted');
+                            },
+                            child: Text('button2'),
+                          ),
+                        )
+                      ],
                     ),
-                    Spacer(),
-                    RaisedButton(
-                      onPressed: () {
-                        print('button 1 tappted');
-                      },
-                      child: Text('button1'),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: RaisedButton(
-                        onPressed: () {
-                          print('button 2 tappted');
-                        },
-                        child: Text('button2'),
-                      ),
-                    )
-                  ],
+                  ),
                 ),
               ),
             ),
