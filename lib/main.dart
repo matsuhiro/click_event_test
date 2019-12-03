@@ -91,6 +91,45 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                print('container tapped');
+              },
+              child: Container(
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    RaisedButton(
+                      onPressed: () {
+                        print('button 0 tappted');
+                      },
+                      child: Text('button0'),
+                    ),
+                    Spacer(),
+                    RaisedButton(
+                      onPressed: () {
+                        print('button 1 tappted');
+                      },
+                      child: Text('button1'),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: RaisedButton(
+                        onPressed: () {
+                          print('button 2 tappted');
+                        },
+                        child: Text('button2'),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
